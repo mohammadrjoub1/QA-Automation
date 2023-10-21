@@ -1,0 +1,10 @@
+{
+  "server": "nginx",
+  "date": "Sat, 21 Oct 2023 07:42:53 GMT",
+  "content-type": "text/html; charset=UTF-8",
+  "transfer-encoding": "chunked",
+  "connection": "keep-alive",
+  "cache-control": "no-cache, private",
+  "x-content-type-options": "nosniff",
+  "x-xss-protection": "1; mode=block"
+}

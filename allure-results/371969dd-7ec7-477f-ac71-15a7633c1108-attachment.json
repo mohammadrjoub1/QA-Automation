@@ -1,0 +1,13 @@
+{
+  "server": "nginx",
+  "date": "Sat, 21 Oct 2023 11:07:38 GMT",
+  "content-type": "application/json",
+  "transfer-encoding": "chunked",
+  "connection": "keep-alive",
+  "set-cookie": [
+    "orangehrm=f93b1ae737a5428e1a2ffe8f4d688cd4; path=/web; secure; HttpOnly; SameSite=Strict"
+  ],
+  "cache-control": "no-cache, private",
+  "x-content-type-options": "nosniff",
+  "x-xss-protection": "1; mode=block"
+}

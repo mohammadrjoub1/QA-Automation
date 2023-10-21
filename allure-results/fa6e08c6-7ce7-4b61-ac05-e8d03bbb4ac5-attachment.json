@@ -1,0 +1,9 @@
+{
+  "Connection": "keep-alive",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+  "accept": "*/*",
+  "cookie": "orangehrm=b585d2e350dc2e989665c3c8be66f967",
+  "accept-encoding": "gzip, deflate",
+  "content-type": "application/json",
+  "content-length": 91
+}

@@ -1,0 +1,23 @@
+{
+  "data": {
+    "id": 236,
+    "userName": "mohamsmdadd1234",
+    "deleted": false,
+    "status": true,
+    "employee": {
+      "empNumber": 405,
+      "employeeId": "0529",
+      "firstName": "mohammad",
+      "middleName": "mohammad",
+      "lastName": "mohammad",
+      "terminationId": null
+    },
+    "userRole": {
+      "id": 2,
+      "name": "ESS",
+      "displayName": "ESS"
+    }
+  },
+  "meta": [],
+  "rels": []
+}

@@ -1,0 +1,23 @@
+{
+  "data": {
+    "id": 40,
+    "userName": "dsaffgs32",
+    "deleted": false,
+    "status": true,
+    "employee": {
+      "empNumber": 51,
+      "employeeId": "0529",
+      "firstName": "mohammad",
+      "middleName": "OK",
+      "lastName": "mohammad",
+      "terminationId": null
+    },
+    "userRole": {
+      "id": 2,
+      "name": "ESS",
+      "displayName": "ESS"
+    }
+  },
+  "meta": [],
+  "rels": []
+}

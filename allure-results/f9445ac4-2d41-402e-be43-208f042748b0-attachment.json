@@ -1,0 +1,29 @@
+{
+  "data": {
+    "id": 70,
+    "candidate": {
+      "id": 24,
+      "firstName": "RJOUB",
+      "middleName": "RJOUB",
+      "lastName": "RJOUB"
+    },
+    "vacancy": {
+      "id": 1,
+      "name": "Software Engineer",
+      "hiringManager": {
+        "empNumber": 2,
+        "firstName": "Odis",
+        "middleName": "",
+        "lastName": "Adalwin",
+        "terminationId": null
+      }
+    },
+    "note": null,
+    "action": {
+      "id": 2,
+      "label": "Shortlisted"
+    }
+  },
+  "meta": [],
+  "rels": []
+}
