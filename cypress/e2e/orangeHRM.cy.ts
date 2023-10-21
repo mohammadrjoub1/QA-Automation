@@ -36,7 +36,7 @@ describe("senario #1", () => {
     
     });
 
-    it('CREATE NEW CANDIDATE', () => {
+    it('CREATE NEW NEW CANDIDATE', () => {
         cy.visit('/recruitment/addCandidate')
         addCandidate.createNewCandidate(faker.person.firstName(),faker.person.middleName(),faker.person.lastName());
         addCandidate.uploadFileWithAssertion('cypress/fixtures/RJOUB123.pdf');
