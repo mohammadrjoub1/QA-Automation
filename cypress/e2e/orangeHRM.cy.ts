@@ -16,10 +16,7 @@ describe("senario #1", () => {
         cy.get('@empData').then((data:any)=>{
         createEmployeeViaApi.addEmployeeViaApi(data.empID,data.firstName,data.lastName,data.middleName,username,data.password);
         loginWithEmployeeViaUi.loginViaUi(username,data.password);
-    
         })
-    
-    
     });
 
     it('create a candidate then upload file and make the assertion', () => {
