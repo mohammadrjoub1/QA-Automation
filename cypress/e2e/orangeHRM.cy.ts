@@ -12,7 +12,7 @@ describe("senario #1", () => {
 
     it('Create Employee Then Login with the new Employee', () => {
         const username=faker.internet.userName();
-        cy.fixture('employeeData').as('empData');
+        cy.fixture('employeeData').as('empData') ;
         cy.get('@empData').then((data:any)=>{
         createEmployeeViaApi.addEmployeeViaApi(data.empID,data.firstName,data.lastName,data.middleName,username,data.password);
         loginWithEmployeeViaUi.loginViaUi(username,data.password);
