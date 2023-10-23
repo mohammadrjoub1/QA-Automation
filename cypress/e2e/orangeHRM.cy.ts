@@ -26,7 +26,7 @@ describe("senario #1", () => {
     });
   });
 
-  it("create a candidate Then upload file and make the assertion", () => {
+  it("create a  candidate Then upload file and make the assertion", () => {
     cy.visit("/recruitment/addCandidate");
     addCandidate.createNewCandidate(
       faker.person.firstName(),
