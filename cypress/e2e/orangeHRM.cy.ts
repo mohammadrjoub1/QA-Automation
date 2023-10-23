@@ -16,5 +16,7 @@ describe("senario #1", () => {
     loginAsAdmin.loginAdmin();
   });
 
-  it("first TC", () => {});
+  it("first TC", () => {  
+    const x = 3;
+  });
 });
