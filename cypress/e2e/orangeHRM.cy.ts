@@ -9,4 +9,6 @@ describe("senario #1", () => {
     cy.visit("/auth/login");
     loginAsAdmin.loginAdmin();
   });
+
+  it("first TC", () => {});
 });
