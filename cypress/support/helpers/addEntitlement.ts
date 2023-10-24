@@ -5,7 +5,7 @@ export class addEntitlement {
       url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/leave/leave-entitlements",
       body: {
         empNumber: employeeNumber,
-        leaveTypeId: 8,
+        leaveTypeId: 6,
         fromDate: "2023-01-01",
         toDate: "2024-08-24",
         entitlement: numOfEntitlement,
@@ -13,3 +13,4 @@ export class addEntitlement {
     });
   }
 }
+
