@@ -1,9 +1,7 @@
-﻿import loginAsAdmin from "../support/helpers/loginAsAdmin";
-import { faker } from "@faker-js/faker";
+﻿import { faker } from "@faker-js/faker";
 import { createEmployeeViaApi } from "../support/helpers/createEmployeeViaApi";
-import { loginWithEmployeeViaUi } from "../support/helpers/loginWithEmployeeViaUi";
-import { addCandidate } from "../support/helpers/addCandidate";
 import { addEntitlement } from "../support/helpers/addEntitlement";
+import { loginMe } from "../support/helpers/loginMe";
 
 /*
 1- we need to add employee by beeing loggen in with admin
@@ -17,25 +15,28 @@ describe("senario #1", () => {
 
     cy.visit("/auth/login")
     .then(()=>{
-    loginAsAdmin.loginAdmin();
+      loginMe.loginMe("Admin","admin123");
+
     });
     
   });
 
   it("Employee request a leave", () => {  
-    createEmployeeViaApi.addEmployeeViaApi("0599","mohammad","jamal","rjoub","moh1d23","mohammad1234").then((empNumber)=>{
-      employeeNumber=empNumber;
-      cy.log(`Employee number: ${empNumber}`);
-    addEntitlement.addEntitlement(employeeNumber,6).then(()=>{
-      
+    cy.fixture("employeeData.json").
+    then((data)=>{
+      createEmployeeViaApi.addEmployeeViaApi(createEmployeeViaApi.generateEmployeeData())
 
-
+      //addEntitlement to the employee using the employeeNumber we got from the addEmployeeViaApi method above
+      .then((empNumber)=>{
+        employeeNumber=empNumber;
+        cy.log(`Employee number: ${empNumber}`);
+      addEntitlement.addEntitlement(employeeNumber,6)
+      //login with added Employee 
+      // .then(()=>{
+      //   loginMe.loginMe()
+  
+      // })
+      })
     })
-    })
-
-
-
-   
   });
-
 });
