@@ -22,9 +22,10 @@ describe("senario #1", () => {
   });
 
   it("Employee request a leave", () => {  
-    cy.fixture("employeeData.json").
-    then((data)=>{
-      createEmployeeViaApi.addEmployeeViaApi(createEmployeeViaApi.generateEmployeeData())
+  
+    cy.fixture("employeeData.json").then((data)=>{
+
+      createEmployeeViaApi.addEmployeeViaApi(data.empId,data.firstName,data.middleName,data.lastName,data.username,data.password)
 
       //addEntitlement to the employee using the employeeNumber we got from the addEmployeeViaApi method above
       .then((empNumber)=>{
@@ -37,6 +38,11 @@ describe("senario #1", () => {
   
       // })
       })
+  
+
     })
+
+   
+   
   });
 });

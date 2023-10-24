@@ -1,5 +1,5 @@
 export class createEmployeeViaApi {
-  static addEmployeeViaApi(employee:object) {
+  static addEmployeeViaApi(empId,firstName,middleName,lastName,username,password) {
     // Return a Promise that resolves with the employee number
     return new Promise((resolve, reject) => {
       cy.request({
@@ -7,7 +7,7 @@ export class createEmployeeViaApi {
         url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees",
         body: {
           empPicture: null,
-          employeeId: empID,
+          employeeId: empId,
           firstName: firstName,
           lastName: lastName,
           middleName: middleName,
@@ -39,19 +39,4 @@ export class createEmployeeViaApi {
     });
   }
 
-  static generateEmployeeData():object {
-    let  employeeObject
-    cy.fixture("employeeData.json").then((data) => {
-      employeeObject ={
-        empID: data.empID,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        middleName:data.middleName,
-        username: data.username,
-        password: data.password,
-      };
-      
-    });
-    return employeeObject;
-  }
 }
