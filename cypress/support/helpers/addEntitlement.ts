@@ -2,7 +2,7 @@ export class addEntitlement {
   static addEntitlement(employeeNumber,numOfEntitlement) {
    return cy.request({
       method: "POST",
-      url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/leave/leave-entitlements",
+      url: "/api/v2/leave/leave-entitlements",
       body: {
         empNumber: employeeNumber,
         leaveTypeId: 6,

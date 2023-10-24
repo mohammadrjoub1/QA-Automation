@@ -2,7 +2,7 @@ export class requestLeave {
   static requestLeave() {
     cy.request({
       method: "POST",
-      url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/leave/leave-requests",
+      url: "/api/v2/leave/leave-requests",
       body: {
         leaveTypeId: 6,
         fromDate: "2023-01-02",
