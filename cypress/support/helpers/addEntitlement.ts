@@ -1,6 +1,6 @@
 export class addEntitlement {
-  static addEntitlement(employeeNumber,numOfEntitlement) {
-   return cy.request({
+  static addEntitlement(employeeNumber, numOfEntitlement) {
+    return cy.request({
       method: "POST",
       url: "/api/v2/leave/leave-entitlements",
       body: {
@@ -13,4 +13,3 @@ export class addEntitlement {
     });
   }
 }
-

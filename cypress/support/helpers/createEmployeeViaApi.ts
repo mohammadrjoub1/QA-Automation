@@ -1,5 +1,5 @@
 export class createEmployeeViaApi {
-  static addEmployeeViaApi(empId,firstName,middleName,lastName,username,password) {
+  static addEmployeeViaApi(empId, firstName, middleName, lastName, username, password) {
     // Return a Promise that resolves with the employee number
     return new Promise((resolve, reject) => {
       cy.request({
@@ -38,6 +38,4 @@ export class createEmployeeViaApi {
       expect(response).property("status").to.equal(200);
     });
   }
-
-
 }

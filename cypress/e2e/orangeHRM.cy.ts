@@ -24,35 +24,24 @@ describe("senario #1", () => {
 
   it("Employee request a leave", () => {
     cy.fixture("employeeData.json").then((data) => {
-      createEmployeeViaApi
-        .addEmployeeViaApi(
-          data.empId,
-          data.firstName,
-          data.middleName,
-          data.lastName,
-          `${data.username}${randomNumber}`,
-          data.password,
-        )
-        //addEntitlement to the employee using the employeeNumber we got from the addEmployeeViaApi method above
-        .then((empNumber) => {
-          employeeNumber = empNumber;
-          cy.log(`Employee number: ${empNumber}`);
-          addEntitlement
-            .addEntitlement(empNumber, 6)
-            //login with added Employee
-            .then(() => {
-              loginMe.loginSecondTime(`${data.username}${randomNumber}`, data.password);
-            })
-            .then(() => {
-              requestLeave.requestLeave();
-            })
-            .then((response) => {
-              loginMe.loginSecondTime("Admin", "admin123");
-              approveLeave.approveLeave(response.body.data.id);
-              checkAproval.checkAproval(data.username,data.password);
-            });
-        });
+      createEmployeeViaApi.addEmployeeViaApi(data.empId, data.firstName, data.middleName, data.lastName, `${data.username}${randomNumber}`, data.password).then((empNumber) => {
+        employeeNumber = empNumber;
+        cy.log(`Employee number: ${empNumber}`);
+        addEntitlement
+          .addEntitlement(empNumber, 6)
+          .then(() => {
+            loginMe.loginSecondTime(`${data.username}${randomNumber}`, data.password);
+          })
+          .then(() => {
+            requestLeave.requestLeave();
+          })
+          .then((response) => {
+            loginMe.loginSecondTime("Admin", "admin123");
+            approveLeave.approveLeave(response.body.data.id);
+            checkAproval.checkAproval(`${data.username}${randomNumber}`, data.password);
+          });
+      });
     });
   });
 });
-// 
+//
