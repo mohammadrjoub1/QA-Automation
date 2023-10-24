@@ -7,26 +7,33 @@ export class createEmployeeViaApi {
     username: string,
     password: string,
   ) {
-    //add new employee using API
-    cy.request({
-      method: "POST",
-      url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees",
-      body: {
-        empPicture: null,
-        employeeId: empID,
-        firstName: firstName,
-        lastName: lastName,
-        middleName: middleName,
-      },
-    }).then((response) => {
-      expect(response).property("status").to.equal(200);
-      console.log(response.body.data.empNumber);
-      this.addUser(response.body.data.empNumber, username, password);
+    // Return a Promise that resolves with the employee number
+    return new Promise((resolve, reject) => {
+      cy.request({
+        method: "POST",
+        url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees",
+        body: {
+          empPicture: null,
+          employeeId: empID,
+          firstName: firstName,
+          lastName: lastName,
+          middleName: middleName,
+        },
+      }).then((response) => {
+        expect(response).property("status").to.equal(200);
+        this.addUser(response.body.data.empNumber, username, password);
+        
+        // Resolve the Promise with the employee number
+        resolve(response.body.data.empNumber);
+      });
     });
   }
+  
   static addUser(empNumberr: number, username: string, password: string) {
+    
     //creat user login deails for new employee
     cy.request({
+      
       method: "POST",
       url: "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/admin/users",
       body: {
@@ -39,5 +46,6 @@ export class createEmployeeViaApi {
     }).then((response) => {
       expect(response).property("status").to.equal(200);
     });
+
   }
 }
