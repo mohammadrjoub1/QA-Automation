@@ -18,6 +18,8 @@ beforeEach("beforeEach TC",()=>{
 
 it("first TC",()=>{
 
+  cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/addCandidate")
+  cy.get('input[type="file"]').attachFile('cypress/fixtures/RJOUB123.pdf');
 
 
 
