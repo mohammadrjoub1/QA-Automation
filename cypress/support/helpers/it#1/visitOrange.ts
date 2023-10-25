@@ -1,16 +1,15 @@
-import { deleteAllEmployees } from "./it#1/deleteAllEmployees";
-import { loginMe } from "./it#1/loginMe";
+import { deleteAllEmployees } from "./deleteAllEmployees";
+import { loginMe } from "./loginMe";
 
 export class visitOrange{
 static visitOrange(){
-
+  return new Promise((resolve, reject) => {
     cy.visit("/auth/login")
     .then(() => {
       // Perform your login and delete actions here
       loginMe.loginAsAdmin("Admin", "admin123");
-      deleteAllEmployees.deleteThem();
     });
-
+  })
 }
 
 
