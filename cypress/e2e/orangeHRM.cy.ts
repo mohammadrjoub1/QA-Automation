@@ -6,6 +6,7 @@ import { requestLeave } from "../support/helpers/requestLeave";
 import { deleteAllEmployees } from "../support/helpers/deleteAllEmployees";
 import { approveLeave } from "../support/helpers/approveLeave";
 import { checkAproval } from "../support/helpers/checkAproval";
+import { visitOrange } from "../support/helpers/visitOrange";
 Cypress.on("uncaught:exception", (err, runnable) => {
   return false;
 });
@@ -13,13 +14,7 @@ let employeeNumber;
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 describe("senario #1", () => {
   beforeEach(() => {
-    cy.visit("/auth/login")
-      .then(() => {
-        loginMe.loginAsAdmin("Admin", "admin123");
-      })
-      .then(() => {
-        deleteAllEmployees.deleteThem();
-      });
+    visitOrange.visitOrange();
   });
 
   it("Employee request a leave", () => {
@@ -36,7 +31,7 @@ describe("senario #1", () => {
             requestLeave.requestLeave();
           })
           .then((response) => {
-            loginMe.loginSecondTime("Admin", "admin123");
+            loginMe.loginSecondTime("Admin", "admin123").then((response) => {});
             approveLeave.approveLeave(response.body.data.id);
             checkAproval.checkAproval(`${data.username}${randomNumber}`, data.password);
           });
@@ -44,4 +39,3 @@ describe("senario #1", () => {
     });
   });
 });
-//

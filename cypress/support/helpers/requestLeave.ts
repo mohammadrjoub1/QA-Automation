@@ -1,6 +1,6 @@
 export class requestLeave {
   static requestLeave() {
-  return  cy.request({
+    cy.request({
       method: "POST",
       url: "/api/v2/leave/leave-requests",
       body: {
