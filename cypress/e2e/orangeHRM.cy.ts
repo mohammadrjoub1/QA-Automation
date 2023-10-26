@@ -6,9 +6,6 @@ import { requestLeave } from "../support/helpers/it#1/requestLeave";
 import { deleteAllEmployees } from "../support/helpers/it#1/deleteAllEmployees";
 import { approveLeave } from "../support/helpers/it#1/approveLeave";
 import { checkAproval } from "../support/helpers/it#1/checkAproval";
-import { visitOrange } from "../support/helpers/it#1/visitOrange";
-import { deleteAllVacancies } from "../support/helpers/it#2/deleteAllVacancies";
-import { addVacancyViaApi } from "../support/helpers/it#2/addVacancyViaApi";
 import { prepareData } from "../support/helpers/it#2/prepareData";
 import { attachFile } from "../support/helpers/it#2/attachFile";
 Cypress.on("uncaught:exception", (err, runnable) => {
@@ -49,13 +46,8 @@ describe("senario #1", () => {
     });
   });
 });
-// Given The system has a vacancy record
-// When The user opens the vacancy form on the edit mode for that vacancy
-// And The user clicks on Add button in the Attachments area
-//  And The user uploads a file for that vacancy and saves the form
-// Then The file should be uploaded and added to vacancy
 
-describe.only("senario #2", () => {
+describe("senario #2", () => {
   beforeEach("", () => {
    prepareData.prepareIt();
 
