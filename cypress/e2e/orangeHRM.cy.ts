@@ -15,13 +15,11 @@ let employeeNumber;
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 describe("senario #1", () => {
   beforeEach(() => {
-    cy.visit("/auth/login")
-    .then(() => {
+    cy.visit("/auth/login").then(() => {
       // Perform your login and delete actions here
       loginMe.loginAsAdmin("Admin", "admin123");
     });
     deleteAllEmployees.deleteThem();
-    
   });
 
   it("Employee request a leave", () => {
@@ -49,16 +47,11 @@ describe("senario #1", () => {
 
 describe("senario #2", () => {
   beforeEach("", () => {
-   prepareData.prepareIt();
-
-
+    prepareData.prepareIt();
   });
 
   it("Check that The file is uploaded and added to vacancy", () => {
     attachFile.attachFile();
     attachFile.uplaodingAssertion();
-    
-
   });
 });
-
